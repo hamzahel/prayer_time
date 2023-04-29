@@ -32,3 +32,8 @@ La méthode schedule prend plusieurs paramètres, y compris le temps de la notif
 Lorsque l'heure de la prière est atteinte, la bibliothèque envoie une notification locale à l'utilisateur pour le rappeler de prier. L'utilisateur peut également choisir d'activer ou de désactiver les notifications pour chaque prière.
 
 LocalNotification est une bibliothèque pratique et utile pour les applications de prière. Elle permet aux utilisateurs de définir des rappels personnalisés pour chaque prière, ce qui peut les aider à maintenir leur pratique religieuse et à ne pas manquer une prière importante.
+
+## Les interfaces de l'application
+
+
+![Prayer Time](https://user-images.githubusercontent.com/66421436/235308781-eb385055-ed3a-4cd1-8b99-46a804b3c03b.png)
