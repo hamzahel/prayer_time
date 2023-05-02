@@ -1,3 +1,4 @@
+import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
 import 'package:pray_time/components/Button.dart';
 import 'package:pray_time/config/appLocal.dart';
@@ -18,6 +19,9 @@ class SettingsContainer extends StatefulWidget {
 }
 
 class _SettingsContainerState extends State<SettingsContainer> {
+  late AudioHandler _audioHandler;
+
+
   @override
   Widget build(BuildContext context) {
     return Consumer<States>(builder: (context, value, child) {
@@ -77,7 +81,8 @@ class _SettingsContainerState extends State<SettingsContainer> {
                                                 (value.getRemainingTime == index)
                                                     ? primaryColor
                                                     : Colors.white,
-                                            press: () {
+                                            press: () async {
+
                                               setState(() {
                                                 value.setRemainingTime(index);
                                               });
@@ -105,7 +110,7 @@ class _SettingsContainerState extends State<SettingsContainer> {
             ),
             MenuItem(
               title: getLang(context, "Sound"),
-              content: audios[value.getAudioIndex].title,
+              content: audios[value.getAudioIndex].tag.title.toString(),
               press: () {
                 showModalBottomSheet<void>(
                     context: context,
@@ -127,17 +132,20 @@ class _SettingsContainerState extends State<SettingsContainer> {
                                         itemCount: audios.length - 1,
                                         itemBuilder: (context, index) {
                                           return MenuItem(
-                                            title: audios[index].title,
+                                            title: audios[value.getAudioIndex].tag.title.toString(),
                                             isSubTitle: true,
                                             titleColor:
                                                 (value.getAudioIndex == index)
                                                     ? primaryColor
                                                     : Colors.white,
-                                            press: ()  {
+                                            press: () {
                                               setState(() {
                                                 value.setAudioIndex(index);
-                                                initAudio(player, audios[value.getAudioIndex].src);
+                                                initAudio(player, audios[value.getAudioIndex]);
                                                 player.play();
+                                                // audioPlayer.play(DeviceFileSource(audios[value.getAudioIndex].src));
+                                                // value.initAudio(audios[value.getAudioIndex].src);
+                                                // value.getAudioPlayer.play();
                                               });
                                             },
                                           );
@@ -219,7 +227,7 @@ class _SettingsContainerState extends State<SettingsContainer> {
                                         width: getProportionateScreenWidth(45),
                                         height: getProportionateScreenHeight(45),
                                         press: () {
-                                          player.stop();
+                                          value.getAudioPlayer.stop();
                                           Navigator.pop(context);
                                         },
                                       )),

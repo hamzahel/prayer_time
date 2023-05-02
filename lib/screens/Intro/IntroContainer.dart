@@ -1,3 +1,5 @@
+import 'dart:isolate';
+
 import 'package:flutter/material.dart';
 import 'package:pray_time/config/constants.dart';
 import 'package:pray_time/config/sizeConf.dart';
@@ -22,7 +24,7 @@ class _IntroContainerState extends State<IntroContainer>
   void initState() {
     super.initState();
     controller = AnimationController(
-        duration: const Duration(milliseconds: 2500), vsync: this);
+        duration: const Duration(milliseconds: 3500), vsync: this);
     opacity = Tween<double>(begin: 0.0, end: 1.0).animate(controller)
       ..addListener(() {
         setState(() {});
@@ -37,6 +39,34 @@ class _IntroContainerState extends State<IntroContainer>
     controller.dispose();
     super.dispose();
   }
+
+//   void runAction(SendPort port) async {
+//   final receivePort = ReceivePort();
+
+//     // final sendPort = await IsolateNameServer.lookupPortByName('my_port');
+
+//     // Subscribe to the Provider stream
+//     // final streamSubscription =
+//     // Provider.of<States>(context, listen: false).myStream.listen((data) {
+//     //   // Send data to the background Isolate
+//     //   port.send(data);
+//     // });
+
+//     // Wait for messages from the main Isolate
+//     // receivePort.listen((port) async {
+//     //   // Update the Provider data in the background Isolate
+//     //   await Provider.of<States>(context, listen: false).triggerNotificationAndAzan();
+  
+//     // });
+
+//     // Clean up resources
+//     // streamSubscription.cancel();
+//     // receivePort.close();
+//     // port.close();
+//   port.send("something");
+// }
+  //  final receiveport = ReceivePort();
+  //   final isolate = FlutterIsolate.spawn(runAction, receiveport.sendPort);
 
   void navigationPage() async {
     // provider.setCurrentData();

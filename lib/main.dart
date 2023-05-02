@@ -1,9 +1,13 @@
+import "package:audio_service/audio_service.dart";
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import "package:flutter_local_notifications/flutter_local_notifications.dart";
 import "package:flutter_localizations/flutter_localizations.dart";
+import "package:intl/intl.dart";
+import "package:just_audio_background/just_audio_background.dart";
 import "package:pray_time/config/appLocal.dart";
 import "package:pray_time/config/localStorage.dart";
+import "package:pray_time/functions/audioManager.dart";
 import 'package:pray_time/provider/states.dart';
 import "package:pray_time/screens/Intro/index.dart";
 import "package:pray_time/screens/Settings/index.dart";
@@ -16,7 +20,12 @@ import "package:pray_time/functions/workmanager.dart";
 
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  await WidgetsFlutterBinding.ensureInitialized();
+  await JustAudioBackground.init(
+    androidNotificationChannelId: 'com.ryanheise.bg_demo.channel.audio',
+    androidNotificationChannelName: 'Audio playback',
+    androidNotificationOngoing: true,
+  );
   await Workmanager().initialize(callbackDispatcher, isInDebugMode: true);
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {

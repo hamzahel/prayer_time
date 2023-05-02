@@ -114,6 +114,7 @@ final languages = ["english", "arabic"];
 final mFontSize = getProportionateScreenWidth(24);
 final sFontSize = getProportionateScreenWidth(18);
 final xsFontSize = getProportionateScreenWidth(12);
+final mlFontSize = getProportionateScreenWidth(36);
 final lFontSize = getProportionateScreenWidth(48);
 final xlFontSize = getProportionateScreenWidth(64);
 

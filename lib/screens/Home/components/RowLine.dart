@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:pray_time/config/constants.dart';
@@ -8,6 +7,7 @@ import 'package:pray_time/models/localNotificationModel.dart';
 import 'package:pray_time/provider/states.dart';
 import 'package:provider/provider.dart';
 import 'package:pray_time/config/tools.dart';
+import 'package:pray_time/functions/workmanager.dart';
 
 class RowLine extends StatefulWidget {
   RowLine(
@@ -26,6 +26,11 @@ class RowLine extends StatefulWidget {
 
   @override
   State<RowLine> createState() => _RowLineState();
+}
+
+void printMesg()
+{
+  print("alarm isup .......");
 }
 
 class _RowLineState extends State<RowLine> {
@@ -65,8 +70,18 @@ class _RowLineState extends State<RowLine> {
                           ? primaryColor
                           : color)),
               InkWell(
-                  onTap: () {
+                  onTap: () async {
                     print("you click notification");
+                    // final intent = Intent()
+                    //   ..setAction('ACTION_SHOW_SCREEN')
+                    //   ..setPackage(context.packageName)
+                    //   ..addCategory(Intent.CATEGORY_DEFAULT);;
+                    // final pendingIntent = await AndroidAlarmManager. (
+                    //   alarmId: alarmId,
+                    //   intent: intent,
+                    //   wakeup: true,
+                    // );
+
                     // value.setCurrentData();
                     setState(() {
                       value.disableOrEnablePrayTime(widget.indexPray);

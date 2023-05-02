@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pray_time/components/CustomBottomNavBar.dart';
 import 'package:pray_time/config/appLocal.dart';
 import 'package:pray_time/config/constants.dart';
 import 'package:pray_time/config/sizeConf.dart';
@@ -7,7 +6,6 @@ import 'package:pray_time/config/tools.dart';
 import 'package:pray_time/provider/states.dart';
 import 'package:pray_time/screens/Home/components/BoxTime.dart';
 import 'package:pray_time/screens/Home/components/BoxTimesPray.dart';
-import 'package:pray_time/screens/Home/index.dart';
 import 'package:provider/provider.dart';
 import 'package:pray_time/components/Date.dart';
 
@@ -39,27 +37,29 @@ class _HomeContainerState extends State<HomeContainer> {
                   height: getProportionateScreenHeight(120),
                   child: Center(
                     child: Text(
-                          getLang(context, "Today"),
-                          style: TextStyle(
-                              fontSize: mFontSize,
-                              color: primaryColor),
-                        ),
+                      getLang(context, "Today"),
+                      style:
+                          TextStyle(fontSize: mFontSize, color: primaryColor),
+                    ),
                   ),
-
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Date(
-                        day: value.getCurrentData.hijriDate.day,
-                        month: getLang(context, getMonthArabicString(
-                            value.getCurrentData.hijriDate.month)) ,
+                        day: value.getCurrentData.hijriDate.day ?? 1,
+                        month: getLang(
+                            context,
+                            getMonthArabicString(
+                                value.getCurrentData.hijriDate.month)) ,
                         year: 1444),
                     Date(
-                        day: value.getCurrentData.gregorianDate.day,
-                        month: getLang(context, getMonthString(
-                            value.getCurrentData.gregorianDate.month)),
-                        year: 2023),
+                        day: value.getCurrentData.gregorianDate.day ?? 1,
+                        month: getLang(
+                            context,
+                            getMonthString(
+                                value.getCurrentData.gregorianDate.month)),
+                        year: value.getCurrentTime.year ?? 2023),
                   ],
                 ),
                 SizedBox(
@@ -95,49 +95,3 @@ class _HomeContainerState extends State<HomeContainer> {
     });
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // SizedBox(
-  //                   height: SizeConf.screenHeight * 0.8,
-  //                   child: ListView.builder(
-  //                       // primary: true,
-  //                       shrinkWrap: true,
-  //                       itemCount: value.getListOfDataModel.length,
-  //                       itemBuilder: (context, index) {
-  //                         return Text("this is a line " +
-  //                             value.getListOfDataModel[index].gregorianDate.day
-  //                                 .toString());
-  //                       }),
-  //                 ),

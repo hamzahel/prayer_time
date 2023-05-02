@@ -20,9 +20,7 @@ class BoxTimesPray extends StatelessWidget {
         children: [
           Text(
             getLang(context, "AllTimes").toString().toUpperCase(),
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: mFontSize),
+            style: TextStyle(color: Colors.white, fontSize: mFontSize),
           ),
           SizedBox(
             height: getProportionateScreenHeight(36),
@@ -51,16 +49,17 @@ class BoxTimesPray extends StatelessWidget {
                     return Column(
                       children: [
                         RowLine(
-                          title:
-                              getLang(context, value.getCurrentData.times[index].prayerTimeName),
-                          hours: value.getCurrentData.times[index].time.hour,
-                          minutes:
-                              value.getCurrentData.times[index].time.minutes,
-                          isNextPray: value
-                                  .getCurrentData.times[index].prayerTimeName ==
-                              value.getNextPrayList[0].prayerTimeName,
-                          indexPray: index
-                        ),
+                            title: getLang(
+                                context,
+                                value.getCurrentData.times[index]
+                                    .prayerTimeName),
+                            hours: value.getCurrentData.times[index].time.hour ?? 1,
+                            minutes:
+                                value.getCurrentData.times[index].time.minutes ?? 1,
+                            isNextPray: value.getCurrentData.times[index]
+                                    .prayerTimeName ==
+                                value.getNextPrayList[0].prayerTimeName,
+                            indexPray: index),
                         SizedBox(
                           height: getProportionateScreenHeight(23),
                         )

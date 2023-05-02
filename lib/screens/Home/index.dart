@@ -1,7 +1,11 @@
+import "dart:isolate";
+
 import "package:flutter/material.dart";
 import "package:pray_time/components/CustomBottomNavBar.dart";
 import "package:pray_time/config/sizeConf.dart";
+import "package:pray_time/provider/states.dart";
 import "package:pray_time/screens/Home/HomeContainer.dart";
+import "package:provider/provider.dart";
 
 class Home extends StatefulWidget {
   static String routeName = "/Home";
@@ -12,6 +16,8 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
+
+
   @override
   Widget build(BuildContext context) {
     SizeConf().init(context);

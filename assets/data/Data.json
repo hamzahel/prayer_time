@@ -176,37 +176,37 @@
       {
         "prayerTimeName": "Fajr",
         "isUpComming": false,
-        "time": {"hour": 3, "minutes": 36},
+        "time": {"hour": 4, "minutes": 17},
         "universalTime": {"hour": 0, "minutes": 36}
       },
       {
         "prayerTimeName": "Sunrise",
         "isUpComming": false,
-        "time": {"hour": 4, "minutes": 58},
+        "time": {"hour": 6, "minutes": 45},
         "universalTime": {"hour": 1, "minutes": 58}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
-        "time": {"hour": 11, "minutes": 31},
+        "time": {"hour": 17, "minutes": 35},
         "universalTime": {"hour": 8, "minutes": 31}
       },
       {
         "prayerTimeName": "Asr",
         "isUpComming": false,
-        "time": {"hour": 15, "minutes": 0},
+        "time": {"hour": 17, "minutes": 21},
         "universalTime": {"hour": 12, "minutes": 0}
       },
       {
         "prayerTimeName": "Maghrib",
         "isUpComming": false,
-        "time": {"hour": 18, "minutes": 7},
+        "time": {"hour": 17, "minutes": 23},
         "universalTime": {"hour": 15, "minutes": 7}
       },
       {
         "prayerTimeName": "Isha",
         "isUpComming": false,
-        "time": {"hour": 19, "minutes": 37},
+        "time": {"hour": 17, "minutes": 25},
         "universalTime": {"hour": 16, "minutes": 37}
       }
     ]
@@ -698,25 +698,25 @@
       {
         "prayerTimeName": "Sunrise",
         "isUpComming": false,
-        "time": {"hour": 4, "minutes": 57},
+        "time": {"hour": 6, "minutes": 8},
         "universalTime": {"hour": 1, "minutes": 57}
       },
       {
         "prayerTimeName": "Dhuhr",
         "isUpComming": false,
-        "time": {"hour": 11, "minutes": 31},
+        "time": {"hour": 6, "minutes": 42},
         "universalTime": {"hour": 8, "minutes": 31}
       },
       {
         "prayerTimeName": "Asr",
         "isUpComming": false,
-        "time": {"hour": 15, "minutes": 0},
+        "time": {"hour": 6, "minutes": 45},
         "universalTime": {"hour": 12, "minutes": 0}
       },
       {
         "prayerTimeName": "Maghrib",
         "isUpComming": false,
-        "time": {"hour": 18, "minutes": 8},
+        "time": {"hour": 6, "minutes": 55},
         "universalTime": {"hour": 15, "minutes": 8}
       },
       {
@@ -15084,7 +15084,7 @@
       {
         "prayerTimeName": "Isha",
         "isUpComming": false,
-        "time": {"hour": 19, "minutes": 37},
+        "time": {"hour": 23, "minutes": 40},
         "universalTime": {"hour": 16, "minutes": 37}
       }
     ]

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pray_time/config/constants.dart';
 import 'package:pray_time/config/sizeConf.dart';
 import 'package:pray_time/screens/Home/index.dart';
-import 'package:pray_time/screens/Qibla/index.dart';
+// import 'package:pray_time/screens/Qibla/index.dart';
 import 'package:pray_time/screens/Settings/index.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
@@ -41,9 +41,9 @@ class CustomBottomNavBar extends StatelessWidget {
           InkWell(
               onTap: () => Navigator.pushNamed(context, Home.routeName),
               child: homeIcon),
-          InkWell(
-              onTap: () => Navigator.pushNamed(context, Qibla.routeName),
-              child: compassIcon),
+          // InkWell(
+          //     onTap: () => Navigator.pushNamed(context, Qibla.routeName),
+          //     child: compassIcon),
           InkWell(
               onTap: () => Navigator.pushNamed(context, Settings.routeName),
               child: settingIcon)

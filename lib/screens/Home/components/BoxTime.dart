@@ -58,7 +58,7 @@ class BoxTime extends StatelessWidget {
               Text(title.toUpperCase(),
                   style: TextStyle(
                       color: primaryColor,
-                      fontSize: (typebox == TypeBox.PRIMARY) ? lFontSize : mFontSize)),
+                      fontSize: (title == "Maghrib" || title == "Sunrise" || title == "Dhuhr") ? mlFontSize : lFontSize)),
               SizedBox(height: getProportionateScreenHeight(9),),
               ( typebox == TypeBox.PRIMARY) ? Text("PRAYER",
                   style: TextStyle(color: Colors.white, fontSize: xsFontSize)) : SizedBox(height: getProportionateScreenHeight(9),),

@@ -41,18 +41,28 @@ dependencies:
   flutter_svg: ^2.0.5
   loading_indicator: ^3.1.0
   shared_preferences: ^2.0.5
-  # geolocator: ^9.0.2
-  vector_math: ^2.1.4
   # package_info_plus: ^1.0.4
   flutter_qiblah: ^2.0.1
   just_audio: ^0.9.32
+  just_audio_background: ^0.0.1-beta.9
   flutter_local_notifications: ^13.0.0
   workmanager: ^0.5.1
-  android_alarm_manager_plus: ^2.1.3
   hijri: ^3.0.0
+#  android_intent_plus: ^3.1.9
+#  flutter_isolate: ^2.0.4
+#  flutter_launcher_icons: "^0.13.1"
+
+
 dev_dependencies:
+
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_launcher_icons:
+  android: 'launcher_icon'
+  ios: true
+  image_path: 'assets/icons/logo.png'
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
