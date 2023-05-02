@@ -1,7 +1,9 @@
-pray_time
+## prayer_time
+
 Hello and welcome to the Flutter application!
 
-Getting Started
+## Getting Started
+
 This application is designed to help users manage their prayer time based on their location in Qatar. It is available in Arabic and English and supports adding additional languages in the future.
 
 ## The application includes the following features:
