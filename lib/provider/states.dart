@@ -1,22 +1,10 @@
 import 'dart:io';
-import 'dart:isolate';
-import 'dart:ui';
-import 'dart:developer' as developer;
 
-import 'package:audio_service/audio_service.dart';
 import 'package:flutter/foundation.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:audio_session/audio_session.dart';
 import 'package:pray_time/config/localStorage.dart';
-import 'package:pray_time/functions/audioManager.dart';
 import 'package:pray_time/models/DataModle.dart';
-import 'package:pray_time/models/audioModel.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'dart:convert';
-
-import 'package:pray_time/models/localNotificationModel.dart';
-import 'package:provider/provider.dart';
 import 'package:workmanager/workmanager.dart';
 
 class States with ChangeNotifier {
@@ -92,7 +80,15 @@ class States with ChangeNotifier {
     _listOFActivePray[index]["state"] = !_listOFActivePray[index]["state"];
     await addBoolValue(
         _listOFActivePray[index]["name"], _listOFActivePray[index]["state"]);
+    destroyWorks();
     notifyListeners();
+  }
+
+  void destroyWorks() async
+  {
+    await Workmanager().cancelAll();
+    await removeValue("trigger");
+    await init();
   }
 
   Future<void> readJson() async {
@@ -109,6 +105,7 @@ class States with ChangeNotifier {
   void setRemainingTime(int minutes) async {
     await addIntValue("remainingTime", minutes);
     _remainingTime = minutes;
+    destroyWorks();
     notifyListeners();
   }
 
@@ -136,9 +133,9 @@ class States with ChangeNotifier {
   Future<void> getAdanTime() {
     DateTime currentDate = _currentTime;
     for (var element in _currentData.times) {
-      if (element.time.hour >= currentDate.hour ||
+      if (currentDate.hour != 0 && (element.time.hour >= currentDate.hour ||
           (element.time.hour >= currentDate.hour &&
-              element.time.minutes >= currentDate.minute)) {
+              element.time.minutes >= currentDate.minute))) {
         _nextPrayList.add(element);
       }
     }
@@ -164,16 +161,8 @@ class States with ChangeNotifier {
     notifyListeners();
   }
 
-  // void setAudioSource(int index) {
-  //   _audioSource = audios[index];
-  //   notifyListeners();
-  // }
 
-  void playAudio() async
-  {
-    await player.play();
-  }
-  void triggerNotificationAndAzan() async {
+  Future<void> triggerNotificationAndAzan() async {
     int add;
     int diff;
     DateTime currentDate = _currentTime;
@@ -181,37 +170,40 @@ class States with ChangeNotifier {
     int i = 0;
     bool check = false;
 
-    check = _listOFActivePray[0]["state"];
-    add = (getNextPrayList[i].time.hour * 60) + getNextPrayList[i].time.minutes;
-    diff = add - addCurrent;
-    // Workmanager().registerOneOffTask("azantasks1", "azanTime",
-    //     initialDelay: Duration(seconds: 10),
-    //     existingWorkPolicy: ExistingWorkPolicy.replace);
-    // Workmanager().registerOneOffTask("azantasks2", "azanTime",
-    //     initialDelay: Duration(seconds: 40),
-    //     existingWorkPolicy: ExistingWorkPolicy.replace);
-    // Workmanager().registerOneOffTask("remainingtasks1", "remainingTime",
-    //     initialDelay: Duration(seconds: 60),
-    //     existingWorkPolicy: ExistingWorkPolicy.replace);
-    // Workmanager().registerOneOffTask("remainingtasks2", "remainingTime",
-    //     initialDelay: Duration(seconds: 80),
-    //     existingWorkPolicy: ExistingWorkPolicy.replace);
-    if (check && (diff >= 0)) {
-      Workmanager().registerOneOffTask("azantasks" + _currentTime.minute.toString(), "azanTime",
-          initialDelay: Duration(minutes: diff),
-          existingWorkPolicy: ExistingWorkPolicy.replace);
+    while (i < _nextPrayList.length) {
+      check = _listOFActivePray[i]["state"];
+      add =
+          (getNextPrayList[i].time.hour * 60) + getNextPrayList[i].time.minutes;
+      if (getNextPrayList[i].prayerTimeName == "Fajr" && addCurrent > add)
+        diff = ( 24 - addCurrent ) + add;
+      else
+        diff = add - addCurrent;
+      if (check && (diff >= 0)) {
+        await Workmanager().registerOneOffTask(
+            "azantasks" + _nextPrayList[i].prayerTimeName, "azanTime",
+            // tag:"azan" + _nextPrayList[0].prayerTimeName,
+            initialDelay: Duration(minutes: diff),
+            existingWorkPolicy: ExistingWorkPolicy.replace);
+      }
+      if (check && (diff >= _remainingTime)) {
+        await Workmanager().registerOneOffTask(
+            "remainingtasks" + _nextPrayList[i].prayerTimeName, "remainingTime",
+            // tag:"remaining" + _nextPrayList[0].prayerTimeName,
+            initialDelay: Duration(minutes: diff - _remainingTime),
+            existingWorkPolicy: ExistingWorkPolicy.replace);
+      }
+      i++;
     }
-    if (check && (diff >= _remainingTime)) {
-      Workmanager().registerOneOffTask("remainingtasks"+ _currentTime.minute.toString(), "remainingTime",
-          initialDelay: Duration(minutes: diff - _remainingTime),
-          existingWorkPolicy: ExistingWorkPolicy.replace);
-    }
+    return Future.value(true);
   }
 
+  Future<bool> checkInit() async
+  {
+    return (this._nextPrayList.length > 2 && this.getCurrentData != null);
+  }
 
   //  init main
   Future<void> init() async {
-    developer.log("the current time is : " + _currentTime.toString());
     await readJson();
     getIntValue("remainingTime").then((value) {
       _remainingTime = value != null ? value : 15;
@@ -227,9 +219,17 @@ class States with ChangeNotifier {
     });
     bool check = await setCurrentData();
     while (check != true);
-    developer.log("\n\n\nyou enter here in state/....");
     await getAdanTime();
     await getOnePrayTimeState();
-    triggerNotificationAndAzan();
+    int? trigger = await getIntValue("trigger");
+    if (trigger == null) {
+      Workmanager().cancelAll();
+      triggerNotificationAndAzan();
+      Workmanager().registerPeriodicTask("initTask", "initAll",
+          initialDelay: Duration(minutes: (24 * 60) - ((_currentTime.hour * 60) + _currentTime.minute)),
+          frequency: Duration(hours: 24),
+          existingWorkPolicy: ExistingWorkPolicy.replace);
+      await addIntValue("trigger" , 1);
+    }
   }
 }

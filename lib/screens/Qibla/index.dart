@@ -5,6 +5,7 @@ import 'package:pray_time/screens/Qibla/QiblaContainer.dart';
 
 class Qibla extends StatefulWidget {
   static String routeName = "/Qibla";
+
   const Qibla({super.key});
 
   @override
@@ -21,6 +22,7 @@ class _QiblaState extends State<Qibla> {
   Widget build(BuildContext context) {
     SizeConf().init(context);
     return const Scaffold(
-        backgroundColor: backGroundLight, body: QiblaContainer());
+        backgroundColor: backGroundLight,
+        body: SafeArea(child: QiblaContainer()));
   }
 }

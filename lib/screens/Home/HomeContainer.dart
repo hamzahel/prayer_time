@@ -6,8 +6,10 @@ import 'package:pray_time/config/tools.dart';
 import 'package:pray_time/provider/states.dart';
 import 'package:pray_time/screens/Home/components/BoxTime.dart';
 import 'package:pray_time/screens/Home/components/BoxTimesPray.dart';
+import 'package:pray_time/screens/Home/components/TwoBoxTime.dart';
 import 'package:provider/provider.dart';
 import 'package:pray_time/components/Date.dart';
+import 'package:hijri/hijri_calendar.dart';
 
 class HomeContainer extends StatefulWidget {
   const HomeContainer({super.key});
@@ -23,21 +25,20 @@ class _HomeContainerState extends State<HomeContainer> {
       return Container(
           padding: const EdgeInsets.symmetric(horizontal: 0),
           color: backGround,
-          // height: SizeConf.screenHeight * 0.9,
           child: Container(
             width: SizeConf.screenWidth,
             height: SizeConf.screenHeight,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
                   height: getProportionateScreenHeight(12),
                 ),
                 SizedBox(
-                  height: getProportionateScreenHeight(120),
+                  height: getProportionateScreenHeight(60),
                   child: Center(
                     child: Text(
-                      getLang(context, "Today"),
+                      getLang(context, "Today") ?? "TODAY",
                       style:
                           TextStyle(fontSize: mFontSize, color: primaryColor),
                     ),
@@ -47,44 +48,25 @@ class _HomeContainerState extends State<HomeContainer> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Date(
-                        day: value.getCurrentData.hijriDate.day ?? 1,
+                        day: HijriCalendar.now().hDay ?? 1,
                         month: getLang(
                             context,
                             getMonthArabicString(
-                                value.getCurrentData.hijriDate.month)) ,
-                        year: 1444),
+                                HijriCalendar.now().hMonth)) ?? "",
+                        year: HijriCalendar.now().hYear ?? 1444),
                     Date(
                         day: value.getCurrentData.gregorianDate.day ?? 1,
                         month: getLang(
                             context,
                             getMonthString(
-                                value.getCurrentData.gregorianDate.month)),
+                                value.getCurrentData.gregorianDate.month)) ?? "",
                         year: value.getCurrentTime.year ?? 2023),
                   ],
                 ),
                 SizedBox(
                   height: getProportionateScreenHeight(20),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    BoxTime(
-                      desc: getLang(context, "ItsTimeFor"),
-                      title: value.getNextPrayList[0].prayerTimeName,
-                      hour: value.getNextPrayList[0].time.hour,
-                      minutes: value.getNextPrayList[0].time.minutes,
-                      typebox: TypeBox.PRIMARY,
-                    ),
-                    BoxTime(
-                      desc: getLang(context, "NextPrayer"),
-                      title: value.getNextPrayList[1].prayerTimeName,
-                      hour: value.getNextPrayList[1].time.hour,
-                      minutes: value.getNextPrayList[1].time.minutes,
-                      typebox: TypeBox.SECONDRY,
-                    )
-                  ],
-                ),
+                TwoBoxTime(),
                 SizedBox(
                   height: getProportionateScreenHeight(0),
                 ),

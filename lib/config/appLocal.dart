@@ -46,7 +46,7 @@ class _AppLocalDelegate extends LocalizationsDelegate<AppLocale> {
   bool shouldReload(_AppLocalDelegate old) => false;
 }
 
-getLang(BuildContext context, String key) {
+String? getLang(BuildContext context, String? key) {
   if (key == null)
     return "null";
   return AppLocale.of(context).getTranslated(key);

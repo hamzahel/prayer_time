@@ -1,22 +1,25 @@
-import "package:audio_service/audio_service.dart";
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
-import "package:flutter_local_notifications/flutter_local_notifications.dart";
 import "package:flutter_localizations/flutter_localizations.dart";
-import "package:intl/intl.dart";
 import "package:just_audio_background/just_audio_background.dart";
 import "package:pray_time/config/appLocal.dart";
 import "package:pray_time/config/localStorage.dart";
-import "package:pray_time/functions/audioManager.dart";
 import 'package:pray_time/provider/states.dart';
 import "package:pray_time/screens/Intro/index.dart";
-import "package:pray_time/screens/Settings/index.dart";
 import "package:provider/provider.dart";
 import "package:pray_time/routes.dart";
 import "package:pray_time/screens/Home/index.dart";
 import "package:workmanager/workmanager.dart";
 import "package:pray_time/functions/workmanager.dart";
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
+
+void OneSignalExec() async {
+  await OneSignal.shared.setAppId("157e7ac8-711d-4822-9b57-dbb129aabed3");
+  OneSignal.shared.setNotificationWillShowInForegroundHandler((event) {
+    OSNotificationDisplayType.notification;
+  });
+}
 
 
 void main() async {
@@ -62,6 +65,7 @@ class MaterialAppChangerState extends State<MaterialAppChanger> {
 
   @override
   void initState() {
+    OneSignalExec();
     super.initState();
   }
 
@@ -88,6 +92,7 @@ class MaterialAppChangerState extends State<MaterialAppChanger> {
         this._locale = (locale == null) ? Locale('en', '') : Locale(locale, '');
       });
     });
+    removeValue("trigger");
   }
 
   @override

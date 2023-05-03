@@ -23,7 +23,7 @@ class MenuItem extends StatelessWidget {
       onTap: press,
       child: Container(
           width: SizeConf.screenWidth,
-          height: getProportionateScreenHeight(85),
+          height: getProportionateScreenHeight(93),
           decoration: BoxDecoration(color: backGround, boxShadow: [
             BoxShadow(
                 color: Colors.white.withOpacity(0.5),
@@ -43,7 +43,7 @@ class MenuItem extends StatelessWidget {
                   ? Column(
                       children: [
                         SizedBox(
-                          height: getProportionateScreenHeight(15),
+                          height:  getProportionateScreenHeight(15),
                         ),
                         Text(content.toString(),
                             style: TextStyle(

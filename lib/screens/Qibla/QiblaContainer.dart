@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_qiblah/flutter_qiblah.dart';
 import 'package:loading_indicator/loading_indicator.dart';
+import 'package:pray_time/components/CustomBottomNavBar.dart';
 import 'package:pray_time/config/constants.dart';
 import 'package:pray_time/config/sizeConf.dart';
 import 'package:pray_time/screens/Qibla/QiblahCompass.dart';
@@ -33,12 +34,14 @@ class _QiblaContainerState extends State<QiblaContainer> {
           print("the value is: " + snapshot.toString());
           return Stack(
             children: [
-              InkWell(
-                onTap: (){
-                  Navigator.pop(context);
-                },
-                child: arrowLeftIcon),
               QiblahCompass(),
+              Align(
+                  alignment: Alignment.bottomCenter,
+                  child: CustomBottomNavBar(
+                    backgroundcolor: backGroundLight,
+                    color: lightPrimaryColor,
+                    index: 1,
+                  )),
             ],
           );
         } else {

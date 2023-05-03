@@ -54,8 +54,8 @@ class _SettingsContainerState extends State<SettingsContainer> {
               height: getProportionateScreenHeight(40),
             ),
             MenuItem(
-              title: getLang(context, "RemainingTime"),
-              content: value.getRemainingTime.toString() + getLang(context, "minutes"),
+              title: getLang(context, "RemainingTime") ?? "",
+              content: value.getRemainingTime.toString() + (getLang(context, "minutes") ?? ""),
               press: () {
                 showModalBottomSheet<void>(
                     context: context,
@@ -69,13 +69,12 @@ class _SettingsContainerState extends State<SettingsContainer> {
                                 Align(
                                   alignment: Alignment.bottomCenter,
                                   child: Container(
-                                    color: Colors.red,
                                     height: SizeConf.screenHeight * 0.54,
                                     child: ListView.builder(
                                         itemCount: 31,
                                         itemBuilder: (context, index) {
                                           return MenuItem(
-                                            title: index.toString() + getLang(context, "minutesBefore"),
+                                            title: index.toString() + (getLang(context, "minutesBefore") ?? ""),
                                             isSubTitle: true,
                                             titleColor:
                                                 (value.getRemainingTime == index)
@@ -95,6 +94,7 @@ class _SettingsContainerState extends State<SettingsContainer> {
                                     alignment: Alignment.topRight,
                                     child: Button(
                                       title: "x",
+                                      backGroundColor: lightPrimaryColor,
                                       width: getProportionateScreenWidth(45),
                                       height: getProportionateScreenHeight(45),
                                       press: () {
@@ -109,7 +109,7 @@ class _SettingsContainerState extends State<SettingsContainer> {
               },
             ),
             MenuItem(
-              title: getLang(context, "Sound"),
+              title: getLang(context, "Sound") ?? "",
               content: audios[value.getAudioIndex].tag.title.toString(),
               press: () {
                 showModalBottomSheet<void>(
@@ -126,13 +126,12 @@ class _SettingsContainerState extends State<SettingsContainer> {
                                 Align(
                                   alignment: Alignment.bottomCenter,
                                   child: Container(
-                                    color: Colors.red,
                                     height: SizeConf.screenHeight * 0.54,
                                     child: ListView.builder(
                                         itemCount: audios.length - 1,
                                         itemBuilder: (context, index) {
                                           return MenuItem(
-                                            title: audios[value.getAudioIndex].tag.title.toString(),
+                                            title: audios[index].tag.title.toString(),
                                             isSubTitle: true,
                                             titleColor:
                                                 (value.getAudioIndex == index)
@@ -156,7 +155,7 @@ class _SettingsContainerState extends State<SettingsContainer> {
                                     alignment: Alignment.topRight,
                                     child: Button(
                                       title: "x",
-                                      backGroundColor: backGround,
+                                      backGroundColor: lightPrimaryColor,
                                       width: getProportionateScreenWidth(45),
                                       height: getProportionateScreenHeight(45),
                                       press: () {
@@ -172,7 +171,7 @@ class _SettingsContainerState extends State<SettingsContainer> {
               },
             ),
             MenuItem(
-              title: getLang(context, "Language"),
+              title: getLang(context, "Language") ?? "",
               content: getLang(context, languages[value.getLanIndex]),
               press: () {
                 showModalBottomSheet<void>(
@@ -189,15 +188,16 @@ class _SettingsContainerState extends State<SettingsContainer> {
                                   Align(
                                     alignment: Alignment.bottomCenter,
                                     child: Container(
+                                      padding: EdgeInsets.only(top: getProportionateScreenHeight(45)),
                                       height: SizeConf.screenHeight * 0.54,
                                       child: ListView.builder(
                                           itemCount: 2,
                                           itemBuilder: (context, index) {
                                             return MenuItem(
-                                              title: getLang(context, languages[index]),
+                                              title: getLang(context, languages[index]) ?? "",
                                               isSubTitle: true,
                                               titleColor:
-                                              (value.getAudioIndex == index)
+                                              (value.getLanIndex == index)
                                                   ? primaryColor
                                                   : Colors.white,
                                               press: ()  {
@@ -223,11 +223,10 @@ class _SettingsContainerState extends State<SettingsContainer> {
                                       alignment: Alignment.topRight,
                                       child: Button(
                                         title: "x",
-                                        backGroundColor: backGround,
+                                        backGroundColor: lightPrimaryColor,
                                         width: getProportionateScreenWidth(45),
                                         height: getProportionateScreenHeight(45),
                                         press: () {
-                                          value.getAudioPlayer.stop();
                                           Navigator.pop(context);
                                         },
                                       )),
@@ -239,7 +238,7 @@ class _SettingsContainerState extends State<SettingsContainer> {
               },
             ),
             MenuItem(
-              title: getLang(context, "PrivacyAndPolicy"),
+              title: getLang(context, "PrivacyAndPolicy") ?? "",
               // content: "15 min",
               press: () {},
             ),

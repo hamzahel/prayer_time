@@ -11,18 +11,18 @@ class BoxTime extends StatelessWidget {
       this.height,
       required this.desc,
       required this.title,
-      required this.hour,
-      required this.minutes,
-      required this.typebox,
+      this.hour,
+      this.minutes,
+      this.typebox,
       super.key});
 
-  double? width;
-  double? height;
-  String desc;
-  String title;
-  int hour;
-  int minutes;
-  TypeBox typebox;
+  final double? width;
+  final double? height;
+  final String desc;
+  final String title;
+  final int? hour;
+  final int? minutes;
+  final TypeBox? typebox;
 
   @override
   Widget build(BuildContext context) {
@@ -47,35 +47,33 @@ class BoxTime extends StatelessWidget {
             ],
             borderRadius: BorderRadius.all(
                 Radius.circular(getProportionateScreenHeight(23)))),
-        child: Expanded(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: (typebox == TypeBox.PRIMARY) ? CrossAxisAlignment.start :  CrossAxisAlignment.center,
-            children: [
-              Text(desc.toUpperCase(),
-                  style: TextStyle(color: Colors.white, fontSize: xsFontSize)),
-              SizedBox(height: getProportionateScreenHeight(9),),
-              Text(title.toUpperCase(),
-                  style: TextStyle(
-                      color: primaryColor,
-                      fontSize: (title == "Maghrib" || title == "Sunrise" || title == "Dhuhr") ? mlFontSize : lFontSize)),
-              SizedBox(height: getProportionateScreenHeight(9),),
-              ( typebox == TypeBox.PRIMARY) ? Text("PRAYER",
-                  style: TextStyle(color: Colors.white, fontSize: xsFontSize)) : SizedBox(height: getProportionateScreenHeight(9),),
-              SizedBox(height: (typebox == TypeBox.PRIMARY) ?  getProportionateScreenHeight(9) : getProportionateScreenHeight(35),),
-              Wrap(
-                crossAxisAlignment: WrapCrossAlignment.end,
-                children: [
-                  Text("${add0ToInt(hour)}:${add0ToInt(minutes)}",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: lFontSize)),
-                  // const Text("min",
-                  //     style: TextStyle(color: primaryColor, fontSize: 14)),
-                ],
-              )
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: (typebox == TypeBox.PRIMARY) ? CrossAxisAlignment.start :  CrossAxisAlignment.center,
+          children: [
+            Text(desc.toUpperCase(),
+                style: TextStyle(color: Colors.white, fontSize: xsFontSize)),
+            SizedBox(height: getProportionateScreenHeight(9),),
+            Text(title.toUpperCase(),
+                style: TextStyle(
+                    color: primaryColor,
+                    fontSize: (title == "Maghrib" || title == "Sunrise" || title == "Dhuhr") ? mlFontSize : lFontSize)),
+            SizedBox(height: getProportionateScreenHeight(9),),
+            ( typebox == TypeBox.PRIMARY) ? Text("PRAYER",
+                style: TextStyle(color: Colors.white, fontSize: xsFontSize)) : SizedBox(height: getProportionateScreenHeight(9),),
+            SizedBox(height: (typebox == TypeBox.PRIMARY) ?  getProportionateScreenHeight(9) : getProportionateScreenHeight(35),),
+            Wrap(
+              crossAxisAlignment: WrapCrossAlignment.end,
+              children: [
+                Text("${add0ToInt(hour)}:${add0ToInt(minutes)}",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: lFontSize)),
+                // const Text("min",
+                //     style: TextStyle(color: primaryColor, fontSize: 14)),
+              ],
+            )
+          ],
         ));
   }
 }

@@ -1,9 +1,7 @@
-import 'dart:isolate';
-
 import 'package:flutter/material.dart';
 import 'package:pray_time/config/constants.dart';
-import 'package:pray_time/config/sizeConf.dart';
 import 'package:pray_time/provider/states.dart';
+import 'package:pray_time/components/GenerateIcon.dart';
 import 'package:pray_time/screens/Home/index.dart';
 import 'package:provider/provider.dart';
 
@@ -40,41 +38,10 @@ class _IntroContainerState extends State<IntroContainer>
     super.dispose();
   }
 
-//   void runAction(SendPort port) async {
-//   final receivePort = ReceivePort();
-
-//     // final sendPort = await IsolateNameServer.lookupPortByName('my_port');
-
-//     // Subscribe to the Provider stream
-//     // final streamSubscription =
-//     // Provider.of<States>(context, listen: false).myStream.listen((data) {
-//     //   // Send data to the background Isolate
-//     //   port.send(data);
-//     // });
-
-//     // Wait for messages from the main Isolate
-//     // receivePort.listen((port) async {
-//     //   // Update the Provider data in the background Isolate
-//     //   await Provider.of<States>(context, listen: false).triggerNotificationAndAzan();
-  
-//     // });
-
-//     // Clean up resources
-//     // streamSubscription.cancel();
-//     // receivePort.close();
-//     // port.close();
-//   port.send("something");
-// }
-  //  final receiveport = ReceivePort();
-  //   final isolate = FlutterIsolate.spawn(runAction, receiveport.sendPort);
 
   void navigationPage() async {
-    // provider.setCurrentData();
-    // await provider.initAudio();
     await provider.init();
-    while (provider.getCurrentData.gregorianDate.day == 0);
-    // provider.getAdanTime();
-    // provider.getPlayer.play();
+    while (provider.checkInit() == false);
     Navigator.of(context)
         .pushReplacement(MaterialPageRoute(builder: (_) => const Home()));
   }
@@ -104,15 +71,12 @@ class _IntroContainerState extends State<IntroContainer>
                       alignment: Alignment.center,
                       child: Opacity(
                         opacity: opacity.value,
-                        child: introIcon,
+                        child: IconGenerate(type: IconsType.Intro,),
                       ),
                     ),
                   ],
                 ),
               ),
-              // const Padding(
-              //   padding: EdgeInsets.all(8.0),
-              // )
             ],
           ),
         ),

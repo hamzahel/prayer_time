@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_qiblah/flutter_qiblah.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:pray_time/config/appLocal.dart';
+import 'package:pray_time/config/constants.dart';
+import 'package:pray_time/config/sizeConf.dart';
 
 import 'location_error_widget.dart';
 
@@ -94,10 +97,11 @@ class QiblahCompassWidget extends StatelessWidget {
   final _needleSvg = Image.asset(
     'assets/icons/compassNeedle.png',
     fit: BoxFit.contain,
-    height: 300,
+    width: getProportionateScreenWidth(425),
+    height: getProportionateScreenHeight(425),
     alignment: Alignment.center,
   );
-  final _compassCenter = Image.asset('assets/icons/compassCenter.png');
+  final _compassCenter = SvgPicture.asset('assets/images/qibla_center.svg' , width: getProportionateScreenWidth(127),);
 
   @override
   Widget build(BuildContext context) {
@@ -115,6 +119,17 @@ class QiblahCompassWidget extends StatelessWidget {
         return Stack(
           alignment: Alignment.center,
           children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(top: getProportionateScreenHeight(120)),
+              child: Align(
+                alignment: Alignment.topCenter,
+                child: Text(getLang(context, "QiblaCompass").toString(), style: TextStyle(
+                  color: backGround,
+                  fontSize: mlFontSize,
+                  fontWeight: FontWeight.w500
+                )),
+              ),
+            ),
             Transform.rotate(
               angle: (qiblahDirection.direction * (pi / 180) * -1),
               child: _compassSvg,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-String getMonthString(int number) {
+String? getMonthString(int number) {
   switch (number) {
     case (1):
       return "January";
@@ -44,7 +44,7 @@ String getMonthString(int number) {
   }
 }
 
-String getMonthArabicString(int number) {
+String? getMonthArabicString(int number) {
   switch (number) {
     case (1):
       return "Muharram";
@@ -88,16 +88,16 @@ String getMonthArabicString(int number) {
   }
 }
 
-String add0ToInt(int number) {
-  if (number < 10) {
+String? add0ToInt(int? number) {
+  if (number != null && number < 10) {
     return ("0$number");
   } else {
     return number.toString();
   }
 }
 
-String add0ToString(String number) {
-  if (number.length == 1) {
+String? add0ToString(String? number) {
+  if (number != null && number.length == 1) {
     return ("0" + number);
   } else {
     return number;

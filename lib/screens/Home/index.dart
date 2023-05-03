@@ -1,11 +1,7 @@
-import "dart:isolate";
-
 import "package:flutter/material.dart";
 import "package:pray_time/components/CustomBottomNavBar.dart";
 import "package:pray_time/config/sizeConf.dart";
-import "package:pray_time/provider/states.dart";
 import "package:pray_time/screens/Home/HomeContainer.dart";
-import "package:provider/provider.dart";
 
 class Home extends StatefulWidget {
   static String routeName = "/Home";
@@ -22,11 +18,13 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     SizeConf().init(context);
     return Scaffold(
-        body: Stack(
+        body: SafeArea(
+          child: Stack(
       children: const [
-        HomeContainer(),
-        Align(alignment: Alignment.bottomCenter, child: CustomBottomNavBar())
+          HomeContainer(),
+          Align(alignment: Alignment.bottomCenter, child: CustomBottomNavBar(index: 0,))
       ],
-    ));
+    ),
+        ));
   }
 }

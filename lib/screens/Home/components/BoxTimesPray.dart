@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pray_time/config/appLocal.dart';
 import 'package:pray_time/config/constants.dart';
 import 'package:pray_time/config/sizeConf.dart';
@@ -14,7 +13,7 @@ class BoxTimesPray extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(15)),
+          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(25)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -26,10 +25,10 @@ class BoxTimesPray extends StatelessWidget {
             height: getProportionateScreenHeight(36),
           ),
           Container(
-            height: getProportionateScreenHeight(339),
+            height: getProportionateScreenHeight(369),
             width: getProportionateScreenWidth(381),
             padding: EdgeInsets.symmetric(
-                vertical: getProportionateScreenWidth(0),
+                vertical: getProportionateScreenWidth(10),
                 horizontal: getProportionateScreenHeight(20)),
             decoration: BoxDecoration(
                 color: secondaryColor,
@@ -48,11 +47,14 @@ class BoxTimesPray extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Column(
                       children: [
+                        SizedBox(
+                          height: (value.getLanIndex == 0) ? getProportionateScreenHeight(23) : getProportionateScreenHeight(13),
+                        ),
                         RowLine(
                             title: getLang(
                                 context,
                                 value.getCurrentData.times[index]
-                                    .prayerTimeName),
+                                    .prayerTimeName) ?? "",
                             hours: value.getCurrentData.times[index].time.hour ?? 1,
                             minutes:
                                 value.getCurrentData.times[index].time.minutes ?? 1,
@@ -60,9 +62,7 @@ class BoxTimesPray extends StatelessWidget {
                                     .prayerTimeName ==
                                 value.getNextPrayList[0].prayerTimeName,
                             indexPray: index),
-                        SizedBox(
-                          height: getProportionateScreenHeight(23),
-                        )
+
                       ],
                     );
                   });

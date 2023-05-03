@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pray_time/config/appLocal.dart';
 import 'package:pray_time/config/constants.dart';
 import 'package:pray_time/config/sizeConf.dart';
-import 'package:pray_time/provider/states.dart';
 import 'package:pray_time/screens/Settings/SettingsContainer.dart';
-import 'package:provider/provider.dart';
 
 class Settings extends StatefulWidget {
   static String routeName = "/Settings";
@@ -15,22 +13,12 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
-  // late States provider;
 
   @override
   void initState() {
     super.initState();
   }
 
-  // Future<void> _initPackageInfo() async {
-  //   print("\n\n\nthe init function is working!");
-  //   final info = await PackageInfo.fromPlatform();
-
-  //   setState(() {
-  //     // provider.initPackageInfo();
-  //     // _packageInfo = info;
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +37,7 @@ class _SettingsState extends State<Settings> {
                     height: getProportionateScreenHeight(70),
                     child: Column(children: [
                       Text(
-                          getLang(context, "VersionNumber"),
+                          getLang(context, "VersionNumber") ?? "",
                         style: TextStyle(color: Colors.white),
                       ),
                       Text("1.0.1", style: TextStyle(color: Colors.white))

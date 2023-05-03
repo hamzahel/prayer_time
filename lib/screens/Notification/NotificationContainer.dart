@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:pray_time/components/CustomBottomNavBar.dart';
 import 'package:pray_time/config/appLocal.dart';
 import 'package:pray_time/config/constants.dart';
 import 'package:pray_time/config/sizeConf.dart';
 import 'package:pray_time/provider/states.dart';
-import 'package:pray_time/screens/Home/components/BoxTime.dart';
-import 'package:pray_time/screens/Home/components/BoxTimesPray.dart';
 import 'package:pray_time/screens/Home/index.dart';
 import 'package:provider/provider.dart';
-import 'package:pray_time/components/Date.dart';
 
 class NotificationContainer extends StatefulWidget {
   const NotificationContainer({super.key});
@@ -35,7 +31,7 @@ class _NotificationContainerState extends State<NotificationContainer> {
                 SizedBox(
                   height: getProportionateScreenHeight(50),
                 ),
-                Text(getLang(context, "ItsTimeFor"),
+                Text(getLang(context, "ItsTimeFor") ?? "",
                     style: TextStyle(
                         color: backGround,
                         fontWeight: FontWeight.w500,
@@ -43,7 +39,7 @@ class _NotificationContainerState extends State<NotificationContainer> {
                 SizedBox(
                   height: getProportionateScreenHeight(20),
                 ),
-                Text(getLang(context, "Asr"),
+                Text(getLang(context, "Asr") ?? "",
                     style: TextStyle(
                         color: backGround,
                         fontWeight: FontWeight.w700,
@@ -51,7 +47,7 @@ class _NotificationContainerState extends State<NotificationContainer> {
                 SizedBox(
                   height: getProportionateScreenHeight(20),
                 ),
-                Text(getLang(context, "Prayer"),
+                Text(getLang(context, "Prayer") ?? "",
                     style: TextStyle(
                         color: backGround,
                         fontWeight: FontWeight.w500,

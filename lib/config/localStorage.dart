@@ -1,19 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-//Retrieve the values
-// Set<String> set = myScores.getStringSet("key", null);
-
-//Set the values
-// Set<String> set = new HashSet<String>();
-// set.addAll(listOfExistingScores);
-// scoreEditor.putStringSet("key", set);
-// scoreEditor.commit();
-//
-// Future<void> addSetString (String key, Set<String> value) async
-// {
-//   SharedPreferences prefs = await SharedPreferences.getInstance();
-//
-// }
 
 Future<void> addStringValue(String key, String value) async {
   SharedPreferences prefs = await SharedPreferences.getInstance();

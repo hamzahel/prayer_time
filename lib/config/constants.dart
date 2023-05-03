@@ -4,6 +4,7 @@ import 'package:just_audio/just_audio.dart';
 import 'package:pray_time/config/sizeConf.dart';
 
 const primaryColor = Color(0xFFFFC16D);
+final lightPrimaryColor = Color(0xFF56969E).withOpacity(0.61);
 const backGround = Color(0xFF003E46);
 const backGroundLight = Color(0xFFFEF3E4);
 const primaryGradientColor = LinearGradient(
@@ -25,65 +26,33 @@ final arrowRightIcon = SvgPicture.asset(
   width: getProportionateScreenWidth(74),
 );
 
-// final homeIcon = SvgPicture.asset(
-//   "assets/icons/home.svg",
-//   // width: getProportionateScreenWidth(34),
-// );
+
 
 final homeIcon = Image.asset(
   "assets/icons/home.png",
   width: getProportionateScreenWidth(34),
 );
 
-class NotificationIcon extends StatelessWidget {
-  NotificationIcon({this.color, super.key});
-  Color? color;
-
-  @override
-  Widget build(BuildContext context) {
-    return  SvgPicture.asset(
-    "assets/icons/notification.svg",
-  width: getProportionateScreenWidth(24),
-      color: color,
-  );
-  }
-}
+enum IconsType {Home, Compass, Settings, Notification, Intro}
 
 
-// final notificationIcon = SvgPicture.asset(
-//   "assets/icons/notification.svg",
-//   width: getProportionateScreenWidth(24),
-// );
+
 
 final notifierIcon = SvgPicture.asset(
   "assets/icons/notifier.svg",
   width: SizeConf.screenWidth,
 );
 
-// final settingIcon = SvgPicture.asset(
-//   "assets/icons/setting.svg",
-//   width: getProportionateScreenWidth(34),
-// );
 
 final settingIcon = Image.asset(
   "assets/icons/setting.png",
   width: getProportionateScreenWidth(34),
 );
 
-// final compassIcon = SvgPicture.asset(
-//   "assets/icons/compass.svg",
-//   width: getProportionateScreenWidth(34),
-// );
-
 final compassIcon = Image.asset(
   "assets/icons/compass.png",
   width: getProportionateScreenWidth(34),
 );
-
-// final introIcon = SvgPicture.asset(
-//   "assets/icons/intro.svg",
-//   width: getProportionateScreenWidth(120),
-// );
 
 final introIcon = Image.asset(
   "assets/icons/intro.png",
@@ -108,6 +77,7 @@ final qiblaIcon = Image.asset(
   width: SizeConf.screenWidth * 0.99,
   height: SizeConf.screenHeight * 0.8,
 );
+
 final languages = ["english", "arabic"];
 
 //sizes 
@@ -119,14 +89,4 @@ final lFontSize = getProportionateScreenWidth(48);
 final xlFontSize = getProportionateScreenWidth(64);
 
 
-// TextStyle textStyleRegular (Color ?color)
-// {
-//   return TextStyle(
-//     fontSize: getProportionateScreenWidth(24),
-//   );
-// }
-//
-// final textStyleRegular = TextStyle(
-//   fontSize: getProportionateScreenWidth(24),
-//   color:
-// );
+const String oneSignalId = "157e7ac8-711d-4822-9b57-dbb129aabed3";
