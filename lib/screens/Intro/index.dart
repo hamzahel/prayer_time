@@ -3,7 +3,7 @@ import 'package:pray_time/config/sizeConf.dart';
 import 'package:pray_time/screens/Intro/IntroContainer.dart';
 
 class Intro extends StatefulWidget {
-  static String routeName = "/Notification";
+  static String routeName = "/Intro";
   const Intro({super.key});
 
   @override

@@ -1,11 +1,14 @@
+import 'dart:ffi';
 import 'dart:io';
+import 'dart:math';
 
+import 'package:android_alarm_manager_plus/android_alarm_manager_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:pray_time/config/localStorage.dart';
 import 'package:pray_time/models/DataModle.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:workmanager/workmanager.dart';
+import 'package:pray_time/functions/workmanager.dart';
 
 class States with ChangeNotifier {
 // param init
@@ -86,7 +89,6 @@ class States with ChangeNotifier {
 
   void destroyWorks() async
   {
-    await Workmanager().cancelAll();
     await removeValue("trigger");
     await init();
   }
@@ -170,30 +172,30 @@ class States with ChangeNotifier {
     int i = 0;
     bool check = false;
 
-    while (i < _nextPrayList.length) {
-      check = _listOFActivePray[i]["state"];
-      add =
-          (getNextPrayList[i].time.hour * 60) + getNextPrayList[i].time.minutes;
-      if (getNextPrayList[i].prayerTimeName == "Fajr" && addCurrent > add)
-        diff = ( 24 - addCurrent ) + add;
-      else
-        diff = add - addCurrent;
-      if (check && (diff >= 0)) {
-        await Workmanager().registerOneOffTask(
-            "azantasks" + _nextPrayList[i].prayerTimeName, "azanTime",
-            // tag:"azan" + _nextPrayList[0].prayerTimeName,
-            initialDelay: Duration(minutes: diff),
-            existingWorkPolicy: ExistingWorkPolicy.replace);
-      }
-      if (check && (diff >= _remainingTime)) {
-        await Workmanager().registerOneOffTask(
-            "remainingtasks" + _nextPrayList[i].prayerTimeName, "remainingTime",
-            // tag:"remaining" + _nextPrayList[0].prayerTimeName,
-            initialDelay: Duration(minutes: diff - _remainingTime),
-            existingWorkPolicy: ExistingWorkPolicy.replace);
-      }
-      i++;
-    }
+    // while (i < _nextPrayList.length) {
+    //   check = _listOFActivePray[i]["state"];
+    //   add =
+    //       (getNextPrayList[i].time.hour * 60) + getNextPrayList[i].time.minutes;
+    //   if (getNextPrayList[i].prayerTimeName == "Fajr" && addCurrent > add)
+    //     diff = ( 24 - addCurrent ) + add;
+    //   else
+    //     diff = add - addCurrent;
+    //   if (check && (diff >= 0)) {
+    //     await Workmanager().registerOneOffTask(
+    //         "azantasks" + _nextPrayList[i].prayerTimeName, "azanTime",
+    //         // tag:"azan" + _nextPrayList[0].prayerTimeName,
+    //         initialDelay: Duration(minutes: diff),
+    //         existingWorkPolicy: ExistingWorkPolicy.replace);
+    //   }
+    //   if (check && (diff >= _remainingTime)) {
+    //     await Workmanager().registerOneOffTask(
+    //         "remainingtasks" + _nextPrayList[i].prayerTimeName, "remainingTime",
+    //         // tag:"remaining" + _nextPrayList[0].prayerTimeName,
+    //         initialDelay: Duration(minutes: diff - _remainingTime),
+    //         existingWorkPolicy: ExistingWorkPolicy.replace);
+    //   }
+    //   i++;
+    // }
     return Future.value(true);
   }
 
@@ -221,15 +223,18 @@ class States with ChangeNotifier {
     while (check != true);
     await getAdanTime();
     await getOnePrayTimeState();
-    int? trigger = await getIntValue("trigger");
-    if (trigger == null) {
-      Workmanager().cancelAll();
-      triggerNotificationAndAzan();
-      Workmanager().registerPeriodicTask("initTask", "initAll",
-          initialDelay: Duration(minutes: (24 * 60) - ((_currentTime.hour * 60) + _currentTime.minute)),
-          frequency: Duration(hours: 24),
-          existingWorkPolicy: ExistingWorkPolicy.replace);
-      await addIntValue("trigger" , 1);
-    }
+
+    AndroidAlarmManager.periodic(Duration(seconds: 20),  Random().nextInt(pow(2, 31) as int) , callbackDispatcher);
+
+    // int? trigger = await getIntValue("trigger");
+    // if (trigger == null) {
+    //   Workmanager().cancelAll();
+    //   triggerNotificationAndAzan();
+    //   Workmanager().registerPeriodicTask("initTask", "initAll",
+    //       initialDelay: Duration(minutes: (24 * 60) - ((_currentTime.hour * 60) + _currentTime.minute)),
+    //       frequency: Duration(hours: 24),
+    //       existingWorkPolicy: ExistingWorkPolicy.replace);
+    //   await addIntValue("trigger" , 1);
+    // }
   }
 }

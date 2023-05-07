@@ -1,3 +1,6 @@
+import "dart:ui";
+
+import "package:android_alarm_manager_plus/android_alarm_manager_plus.dart";
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import "package:flutter_localizations/flutter_localizations.dart";
@@ -9,10 +12,13 @@ import "package:pray_time/screens/Intro/index.dart";
 import "package:provider/provider.dart";
 import "package:pray_time/routes.dart";
 import "package:pray_time/screens/Home/index.dart";
-import "package:workmanager/workmanager.dart";
 import "package:pray_time/functions/workmanager.dart";
 import 'package:onesignal_flutter/onesignal_flutter.dart';
+import "dart:isolate";
 
+
+
+ReceivePort port = ReceivePort();
 
 void OneSignalExec() async {
   await OneSignal.shared.setAppId("157e7ac8-711d-4822-9b57-dbb129aabed3");
@@ -24,12 +30,14 @@ void OneSignalExec() async {
 
 void main() async {
   await WidgetsFlutterBinding.ensureInitialized();
+
+  await IsolateNameServer.registerPortWithName(port.sendPort, isolateName);
   await JustAudioBackground.init(
     androidNotificationChannelId: 'com.ryanheise.bg_demo.channel.audio',
     androidNotificationChannelName: 'Audio playback',
     androidNotificationOngoing: true,
   );
-  await Workmanager().initialize(callbackDispatcher, isInDebugMode: true);
+  await AndroidAlarmManager.initialize();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
     runApp(const MyApp());
