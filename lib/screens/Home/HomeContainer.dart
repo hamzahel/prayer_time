@@ -3,6 +3,7 @@ import 'package:pray_time/config/appLocal.dart';
 import 'package:pray_time/config/constants.dart';
 import 'package:pray_time/config/sizeConf.dart';
 import 'package:pray_time/config/tools.dart';
+import 'package:pray_time/functions/localNotificationManager.dart';
 import 'package:pray_time/provider/states.dart';
 import 'package:pray_time/screens/Home/components/BoxTime.dart';
 import 'package:pray_time/screens/Home/components/BoxTimesPray.dart';
@@ -19,6 +20,18 @@ class HomeContainer extends StatefulWidget {
 }
 
 class _HomeContainerState extends State<HomeContainer> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    // WidgetsBinding.instance.addPostFrameCallback((_) async {
+    //   await LocalNotification.showBigTextNotification(
+    //       title: "pray time",
+    //       body: "the azane ",
+    //       fln: LocalNotification.flutterLocalNotificationsPlugin);
+    // });
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Consumer<States>(builder: (context, value, child) {
@@ -39,6 +52,7 @@ class _HomeContainerState extends State<HomeContainer> {
                   child: Center(
                     child: Text(
                       getLang(context, "Today") ?? "TODAY",
+                      textScaleFactor: 1.0,
                       style:
                           TextStyle(fontSize: mFontSize, color: primaryColor),
                     ),

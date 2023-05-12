@@ -36,8 +36,10 @@ class MenuItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(title,
+                  textScaleFactor: 1.0,
                   style: TextStyle(
-                      fontSize: (isSubTitle == true) ? getProportionateScreenWidth(18) : getProportionateScreenWidth(24),
+                      fontSize: (isSubTitle == true) ? getProportionateScreenWidth(18) : mFontSize,
+                      height: 1,
                       color: (titleColor != null) ? titleColor : Colors.white)),
               (content != null)
                   ? Column(
@@ -46,8 +48,10 @@ class MenuItem extends StatelessWidget {
                           height:  getProportionateScreenHeight(15),
                         ),
                         Text(content.toString(),
+                            textScaleFactor: 1.0,
                             style: TextStyle(
                                 fontSize: getProportionateScreenWidth(14),
+                                height: 1,
                                 color: Colors.white))
                       ],
                     )

@@ -68,6 +68,60 @@ final audios = [
         id: '10',
         // Metadata to display in the notification:
         title: "Machari Rashed Al Affassy",
-      )),
+   )),
+  AudioSource.asset("assets/audio/notification1.mp3", tag: MediaItem(
+    // Specify a unique ID for each media item:
+    id: '1',
+    // Metadata to display in the notification:
+    title: "notification1",
+  ),),
+  AudioSource.asset("assets/audio/notification2.mp3", tag: MediaItem(
+    // Specify a unique ID for each media item:
+    id: '2',
+    // Metadata to display in the notification:
+    title: "notification2",
+  ),),
+  AudioSource.asset("assets/audio/notification3.mp3", tag: MediaItem(
+    // Specify a unique ID for each media item:
+    id: '3',
+    // Metadata to display in the notification:
+    title: "notification3",
+  ),),
+  AudioSource.asset("assets/audio/notification4.mp3", tag: MediaItem(
+    // Specify a unique ID for each media item:
+    id: '4',
+    // Metadata to display in the notification:
+    title: "notification4",
+  ),),
+
 ];
+
+
+final notificationSounds = [
+  AudioSource.asset("assets/audio/notification1.mp3", tag: MediaItem(
+    // Specify a unique ID for each media item:
+    id: '1',
+    // Metadata to display in the notification:
+    title: "notification1",
+  ),),
+  AudioSource.asset("assets/audio/notification2.mp3", tag: MediaItem(
+    // Specify a unique ID for each media item:
+    id: '2',
+    // Metadata to display in the notification:
+    title: "notification2",
+  ),),
+  AudioSource.asset("assets/audio/notification3.mp3", tag: MediaItem(
+    // Specify a unique ID for each media item:
+    id: '3',
+    // Metadata to display in the notification:
+    title: "notification3",
+  ),),
+  AudioSource.asset("assets/audio/notification4.mp3", tag: MediaItem(
+    // Specify a unique ID for each media item:
+    id: '4',
+    // Metadata to display in the notification:
+    title: "notification4",
+  ),),
+];
+
 

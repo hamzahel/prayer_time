@@ -48,6 +48,7 @@ class _RowLineState extends State<RowLine> {
         children: [
           Text(
             "${widget.title.toUpperCase()}",
+            textScaleFactor: 1.0,
             style: TextStyle(
                 fontSize: getProportionateScreenHeight(24),
                 color: color),
@@ -57,15 +58,14 @@ class _RowLineState extends State<RowLine> {
             children: [
               Text(
                   "${add0ToInt(widget.hours)}:${add0ToInt(widget.minutes)} min",
+                  textScaleFactor: 1.0,
                   style: TextStyle(
                       fontSize: getProportionateScreenHeight(24),
                       color: color)),
               InkWell(
                   onTap: () async {
-
                     setState(() {
                       value.disableOrEnablePrayTime(widget.indexPray);
-                      value.getOnePrayTimeState();
                     });
                   },
                   child: IconGenerate(type: IconsType.Notification, color: (isActive == false) ? color : primaryColor)),

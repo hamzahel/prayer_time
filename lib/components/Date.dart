@@ -16,6 +16,7 @@ class Date extends StatelessWidget {
       children: [
         Text(
           day.toString(),
+          textScaleFactor: 1.0,
           style: TextStyle(color: Colors.white,
             fontSize: sFontSize
           ),
@@ -24,12 +25,14 @@ class Date extends StatelessWidget {
         SizedBox(width: getProportionateScreenWidth(8)),
         Text(
           month,
+          textScaleFactor: 1.0,
           style: TextStyle(color: Colors.white,
               fontSize: sFontSize),
         ),
         SizedBox(width: getProportionateScreenWidth(8)),
         Text(
           year.toString(),
+          textScaleFactor: 1.0,
           style: TextStyle(color: Colors.white,
               fontSize: sFontSize),
         ),

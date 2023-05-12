@@ -25,31 +25,33 @@ class _SettingsState extends State<Settings> {
     SizeConf().init(context);
     return Scaffold(
         backgroundColor: backGround,
-        body: SizedBox(
-          height: SizeConf.screenHeight,
-          child: Stack(
-            children: [
-              const SettingsContainer(),
-              Align(
-                  alignment: Alignment.bottomCenter,
-                  child: SizedBox(
-                    width: double.infinity,
-                    height: getProportionateScreenHeight(70),
-                    child: Column(children: [
-                      Text(
-                          getLang(context, "VersionNumber") ?? "",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      Text("1.0.1", style: TextStyle(color: Colors.white))
-                      // Consumer<States>(builder: (context, value, child) {
-                      //   // provider = value;
-                      //   value.initPackageInfo();
-                      //   return Text(value.getPackageInfo.version.toString(),
-                      //       style: TextStyle(color: Colors.white));
-                      // })
-                    ]),
-                  )),
-            ],
+        body: SafeArea(
+          child: SizedBox(
+            height: SizeConf.screenHeight,
+            child: Stack(
+              children: [
+                const SettingsContainer(),
+                Align(
+                    alignment: Alignment.bottomCenter,
+                    child: SizedBox(
+                      width: double.infinity,
+                      height: getProportionateScreenHeight(70),
+                      child: Column(children: [
+                        Text(
+                            getLang(context, "VersionNumber") ?? "", textScaleFactor: 1.0,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        Text("1.0.1", textScaleFactor: 1.0,style: TextStyle(color: Colors.white))
+                        // Consumer<States>(builder: (context, value, child) {
+                        //   // provider = value;
+                        //   value.initPackageInfo();
+                        //   return Text(value.getPackageInfo.version.toString(),
+                        //       style: TextStyle(color: Colors.white));
+                        // })
+                      ]),
+                    )),
+              ],
+            ),
           ),
         ));
   }

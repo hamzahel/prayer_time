@@ -38,6 +38,7 @@
 	"QiblaCompass" : "Qibla Compass",
 	"VersionNumber" : "Version Number",
 	"Sound" : "Sound",
+	"NotificationSound" : "Notification Sound",
 	"PrivacyAndPolicy" : "Privacy And Policy",
 	"Today": "TODAY",
 	"minutes": " minutes",

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pray_time/config/appLocal.dart';
 import 'package:pray_time/config/constants.dart';
 import 'package:pray_time/config/sizeConf.dart';
 import 'package:pray_time/config/tools.dart';
@@ -52,20 +53,24 @@ class BoxTime extends StatelessWidget {
           crossAxisAlignment: (typebox == TypeBox.PRIMARY) ? CrossAxisAlignment.start :  CrossAxisAlignment.center,
           children: [
             Text(desc.toUpperCase(),
+                textScaleFactor: 1.0,
                 style: TextStyle(color: Colors.white, fontSize: xsFontSize)),
             SizedBox(height: getProportionateScreenHeight(9),),
             Text(title.toUpperCase(),
+                textScaleFactor: 1.0,
                 style: TextStyle(
                     color: primaryColor,
+                    height: 1,
                     fontSize: (title == "Maghrib" || title == "Sunrise" || title == "Dhuhr") ? mlFontSize : lFontSize)),
             SizedBox(height: getProportionateScreenHeight(9),),
-            ( typebox == TypeBox.PRIMARY) ? Text("PRAYER",
+            ( typebox == TypeBox.PRIMARY) ? Text( getLang(context, "Prayer") ?? "",
                 style: TextStyle(color: Colors.white, fontSize: xsFontSize)) : SizedBox(height: getProportionateScreenHeight(9),),
             SizedBox(height: (typebox == TypeBox.PRIMARY) ?  getProportionateScreenHeight(9) : getProportionateScreenHeight(35),),
             Wrap(
               crossAxisAlignment: WrapCrossAlignment.end,
               children: [
                 Text("${add0ToInt(hour)}:${add0ToInt(minutes)}",
+                    textScaleFactor: 1.0,
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: lFontSize)),

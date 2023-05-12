@@ -6,6 +6,11 @@ Future<void> addStringValue(String key, String value) async {
   prefs.setString(key, value);
 }
 
+Future<void> addSetValue(String key, List<String> value) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.setStringList(key, value);
+}
+
 Future<void> addIntValue(String key, int value) async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   prefs.setInt(key, value);
@@ -24,6 +29,12 @@ Future<void> addBoolValue(String key, bool value) async {
 Future<String?> getStringValue(String key) async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   String? stringValue = prefs.getString(key);
+  return stringValue;
+}
+
+Future<List<String>?> getSetValue(String key) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  List<String>? stringValue = prefs.getStringList(key);
   return stringValue;
 }
 

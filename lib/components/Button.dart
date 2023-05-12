@@ -37,6 +37,7 @@ class Button extends StatelessWidget {
           alignment: Alignment.center,
           child: Text(
             title,
+            textScaleFactor: 1.0,
             style: TextStyle(
                 height: getProportionateScreenHeight(0.8),
                 color: (color == null) ? Colors.white : color,

@@ -17,14 +17,14 @@ class TwoBoxTime extends StatelessWidget {
           children: [
             BoxTime(
               desc: getLang(context, "ItsTimeFor") ?? "",
-              title: (value.getNextPrayList.isEmpty) ? "" : value.getNextPrayList[0].prayerTimeName,
+              title: getLang(context, value.getNextPrayList[0].prayerTimeName) ?? "",
               hour: (value.getNextPrayList.isEmpty) ? 1 : value.getNextPrayList[0].time.hour,
               minutes: (value.getNextPrayList.isEmpty) ? 1 : value.getNextPrayList[0].time.minutes ?? 1,
               typebox: TypeBox.PRIMARY,
             ),
             BoxTime(
               desc: getLang(context, "NextPrayer") ?? "",
-              title: (value.getNextPrayList.isEmpty) ? "" : value.getNextPrayList[1].prayerTimeName,
+              title: getLang(context, value.getNextPrayList[1].prayerTimeName) ?? "",
               hour: (value.getNextPrayList.isEmpty) ? 1 : value.getNextPrayList[1].time.hour,
               minutes: (value.getNextPrayList.isEmpty) ? 1: value.getNextPrayList[1].time.minutes ?? 1,
               typebox: TypeBox.SECONDRY,

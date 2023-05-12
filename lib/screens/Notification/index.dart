@@ -11,10 +11,7 @@ class Notifier extends StatefulWidget {
 }
 
 class _NotifierState extends State<Notifier> {
-  @override
-  void initState() {
-    super.initState();
-  }
+
 
   @override
   Widget build(BuildContext context) {

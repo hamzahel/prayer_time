@@ -19,7 +19,8 @@ class BoxTimesPray extends StatelessWidget {
         children: [
           Text(
             getLang(context, "AllTimes").toString().toUpperCase(),
-            style: TextStyle(color: Colors.white, fontSize: mFontSize),
+            textScaleFactor: 1.0,
+            style: TextStyle(color: Colors.white, height: 1, fontSize: mFontSize),
           ),
           SizedBox(
             height: getProportionateScreenHeight(36),

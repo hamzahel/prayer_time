@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pray_time/config/constants.dart';
+import 'package:pray_time/config/localStorage.dart';
 import 'package:pray_time/provider/states.dart';
 import 'package:pray_time/components/GenerateIcon.dart';
 import 'package:pray_time/screens/Home/index.dart';

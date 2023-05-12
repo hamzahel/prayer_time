@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class LocalNotification {
@@ -14,7 +16,8 @@ class LocalNotification {
   String? payload;
   //local notification
 
-
+  static FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+  FlutterLocalNotificationsPlugin();
   static Future initialize(
       FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin) async {
     var androidInitialize =
@@ -27,16 +30,17 @@ class LocalNotification {
 
   static Future showBigTextNotification(
       {var id = 0, required String title, required String body,
-        var payload, required FlutterLocalNotificationsPlugin fln
+        var payload,String? soundsrc , required FlutterLocalNotificationsPlugin fln
       }) async {
     AndroidNotificationDetails androidPlatformChannelSpecifics =
     new AndroidNotificationDetails (
-      'you_can_name_it_whatever1',
+      'you_can_name_it_whatever'+Random().nextInt(pow(2,32) as int).toString(),
       'channel_name',
       playSound: true,
-      // sound: RawResourceAndroidNotificationSound('notification'),
+      sound: RawResourceAndroidNotificationSound(soundsrc ?? 'notification2'),
       importance: Importance.max,
       priority: Priority.high,
+      enableVibration: true,
     ); // AndroidNotificationDetails
     var not = NotificationDetails(android: androidPlatformChannelSpecifics,
         iOS: DarwinNotificationDetails()

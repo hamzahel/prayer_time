@@ -29,7 +29,8 @@ class _SettingsContainerState extends State<SettingsContainer> {
         width: SizeConf.screenWidth,
         height: SizeConf.screenHeight,
         child: Column(
-          crossAxisAlignment: (value.getLanIndex == 1) ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start ,
+          // crossAxisAlignment: (value.getLanIndex == 1) ? CrossAxisAlignment.end : CrossAxisAlignment.start,
           // shrinkWrap: true,
           // primary: true,
           children: [
@@ -39,15 +40,17 @@ class _SettingsContainerState extends State<SettingsContainer> {
             Wrap(
               crossAxisAlignment: WrapCrossAlignment.center,
               spacing: getProportionateScreenWidth(10),
+              textDirection: (value.getLanIndex == 1) ?  TextDirection.rtl : TextDirection.ltr,
               children: [
                 InkWell(
-                    onTap: () => Navigator.pop(context), child: arrowLeftIcon),
-                // Text(
-                //   getLang(context, "Settings"),
-                //   style: TextStyle(
-                //       fontSize: getProportionateScreenWidth(26),
-                //       color: Colors.white),
-                // ),
+                    onTap: () => Navigator.pop(context), child: (value.getLanIndex == 1) ? arrowRightIcon :  arrowLeftIcon),
+                Text(getLang(context, "Settings").toString().toUpperCase() ?? "",
+                  textScaleFactor: 1.0,
+                  style: TextStyle(
+                      fontSize: mlFontSize,
+                      letterSpacing: 1.5,
+                      color: Colors.white),
+                ),
               ],
             ),
             SizedBox(
@@ -167,6 +170,68 @@ class _SettingsContainerState extends State<SettingsContainer> {
                             ),
                           );
                         });
+                    });
+              },
+            ),
+            MenuItem(
+              title: getLang(context, "NotificationSound") ?? "",
+              content: notificationSounds[value.getNotificationIndex].tag.title.toString(),
+              press: () {
+                showModalBottomSheet<void>(
+                    context: context,
+                    backgroundColor: backGround,
+                    builder: (BuildContext context) {
+                      return StatefulBuilder(
+                          builder: (context, StateSetter setState) {
+                            return Container(
+                              height: SizeConf.screenHeight * 0.6,
+                              width: SizeConf.screenWidth * 0.70,
+                              child: Stack(
+                                children: [
+                                  Align(
+                                    alignment: Alignment.bottomCenter,
+                                    child: Container(
+                                      height: SizeConf.screenHeight * 0.54,
+                                      child: ListView.builder(
+                                          itemCount: notificationSounds.length - 1,
+                                          itemBuilder: (context, index) {
+                                            return MenuItem(
+                                              title: notificationSounds[index].tag.title.toString(),
+                                              isSubTitle: true,
+                                              titleColor:
+                                              (value.getNotificationIndex == index)
+                                                  ? primaryColor
+                                                  : Colors.white,
+                                              press: () {
+                                                setState(() {
+                                                  value.setNotificationAudio(index);
+                                                  initAudio(player, notificationSounds[index]);
+                                                  player.play();
+                                                  // audioPlayer.play(DeviceFileSource(audios[value.getAudioIndex].src));
+                                                  // value.initAudio(audios[value.getAudioIndex].src);
+                                                  // value.getAudioPlayer.play();
+                                                });
+                                              },
+                                            );
+                                          }),
+                                    ),
+                                  ),
+                                  Align(
+                                      alignment: Alignment.topRight,
+                                      child: Button(
+                                        title: "x",
+                                        backGroundColor: lightPrimaryColor,
+                                        width: getProportionateScreenWidth(45),
+                                        height: getProportionateScreenHeight(45),
+                                        press: () {
+                                          player.stop();
+                                          Navigator.pop(context);
+                                        },
+                                      )),
+                                ],
+                              ),
+                            );
+                          });
                     });
               },
             ),

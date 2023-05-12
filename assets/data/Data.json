@@ -186,7 +186,7 @@
         "universalTime": {"hour": 1, "minutes": 58}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 31},
         "universalTime": {"hour": 8, "minutes": 31}
@@ -917,7 +917,7 @@
         "universalTime": {"hour": 2, "minutes": 26}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 23},
         "universalTime": {"hour": 8, "minutes": 23}
@@ -1046,7 +1046,7 @@
         "universalTime": {"hour": 3, "minutes": 20}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 38},
         "universalTime": {"hour": 8, "minutes": 38}
@@ -1175,7 +1175,7 @@
         "universalTime": {"hour": 2, "minutes": 24}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 37},
         "universalTime": {"hour": 8, "minutes": 37}
@@ -1304,7 +1304,7 @@
         "universalTime": {"hour": 1, "minutes": 48}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 38},
         "universalTime": {"hour": 8, "minutes": 38}
@@ -1906,7 +1906,7 @@
         "universalTime": {"hour": 2, "minutes": 16}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 33},
         "universalTime": {"hour": 8, "minutes": 33}
@@ -2035,7 +2035,7 @@
         "universalTime": {"hour": 3, "minutes": 4}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 24},
         "universalTime": {"hour": 8, "minutes": 24}
@@ -2293,7 +2293,7 @@
         "universalTime": {"hour": 1, "minutes": 43}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 32},
         "universalTime": {"hour": 8, "minutes": 32}
@@ -2680,7 +2680,7 @@
         "universalTime": {"hour": 2, "minutes": 52}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 45},
         "universalTime": {"hour": 8, "minutes": 45}
@@ -3024,7 +3024,7 @@
         "universalTime": {"hour": 2, "minutes": 45}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 17},
         "universalTime": {"hour": 8, "minutes": 17}
@@ -3153,7 +3153,7 @@
         "universalTime": {"hour": 3, "minutes": 14}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 48},
         "universalTime": {"hour": 8, "minutes": 48}
@@ -3411,7 +3411,7 @@
         "universalTime": {"hour": 2, "minutes": 4}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 40},
         "universalTime": {"hour": 8, "minutes": 40}
@@ -3798,7 +3798,7 @@
         "universalTime": {"hour": 1, "minutes": 53}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 30},
         "universalTime": {"hour": 8, "minutes": 30}
@@ -4529,7 +4529,7 @@
         "universalTime": {"hour": 2, "minutes": 29}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 21},
         "universalTime": {"hour": 8, "minutes": 21}
@@ -4658,7 +4658,7 @@
         "universalTime": {"hour": 3, "minutes": 21}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 41},
         "universalTime": {"hour": 8, "minutes": 41}
@@ -4787,7 +4787,7 @@
         "universalTime": {"hour": 2, "minutes": 17}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 35},
         "universalTime": {"hour": 8, "minutes": 35}
@@ -4916,7 +4916,7 @@
         "universalTime": {"hour": 1, "minutes": 51}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 39},
         "universalTime": {"hour": 8, "minutes": 39}
@@ -5336,38 +5336,38 @@
       {
         "prayerTimeName": "Fajr",
         "isUpComming": false,
-        "time": {"hour": 3, "minutes": 27},
-        "universalTime": {"hour": 0, "minutes": 27}
+        "time": {"hour": 22, "minutes": 27},
+        "universalTime": {"hour": 19, "minutes": 27}
       },
       {
         "prayerTimeName": "Sunrise",
         "isUpComming": false,
-        "time": {"hour": 4, "minutes": 51},
-        "universalTime": {"hour": 1, "minutes": 51}
+        "time": {"hour": 22, "minutes": 30},
+        "universalTime": {"hour": 19, "minutes": 30}
       },
       {
         "prayerTimeName": "Dhuhr",
         "isUpComming": false,
-        "time": {"hour": 11, "minutes": 30},
-        "universalTime": {"hour": 8, "minutes": 30}
+        "time": {"hour": 22, "minutes": 34},
+        "universalTime": {"hour": 19, "minutes": 34}
       },
       {
         "prayerTimeName": "Asr",
         "isUpComming": false,
-        "time": {"hour": 14, "minutes": 58},
-        "universalTime": {"hour": 11, "minutes": 58}
+        "time": {"hour": 22, "minutes": 38},
+        "universalTime": {"hour": 19, "minutes": 38}
       },
       {
         "prayerTimeName": "Maghrib",
         "isUpComming": false,
-        "time": {"hour": 18, "minutes": 12},
-        "universalTime": {"hour": 15, "minutes": 12}
+        "time": {"hour": 22, "minutes": 42},
+        "universalTime": {"hour": 19, "minutes": 42}
       },
       {
         "prayerTimeName": "Isha",
         "isUpComming": false,
-        "time": {"hour": 19, "minutes": 42},
-        "universalTime": {"hour": 16, "minutes": 42}
+        "time": {"hour": 22, "minutes": 45},
+        "universalTime": {"hour": 22, "minutes": 45}
       }
     ]
   },
@@ -5518,7 +5518,7 @@
         "universalTime": {"hour": 2, "minutes": 18}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 31},
         "universalTime": {"hour": 8, "minutes": 31}
@@ -5647,7 +5647,7 @@
         "universalTime": {"hour": 3, "minutes": 9}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 27},
         "universalTime": {"hour": 8, "minutes": 27}
@@ -5864,26 +5864,26 @@
       {
         "prayerTimeName": "Dhuhr",
         "isUpComming": false,
-        "time": {"hour": 11, "minutes": 30},
-        "universalTime": {"hour": 8, "minutes": 30}
+        "time": {"hour": 17, "minutes": 46},
+        "universalTime": {"hour": 14, "minutes": 46}
       },
       {
         "prayerTimeName": "Asr",
         "isUpComming": false,
-        "time": {"hour": 14, "minutes": 57},
-        "universalTime": {"hour": 11, "minutes": 57}
+        "time": {"hour": 17, "minutes": 48},
+        "universalTime": {"hour": 14, "minutes": 48}
       },
       {
         "prayerTimeName": "Maghrib",
         "isUpComming": false,
-        "time": {"hour": 18, "minutes": 13},
-        "universalTime": {"hour": 15, "minutes": 13}
+        "time": {"hour": 17, "minutes": 49},
+        "universalTime": {"hour": 14, "minutes": 49}
       },
       {
         "prayerTimeName": "Isha",
         "isUpComming": false,
-        "time": {"hour": 19, "minutes": 43},
-        "universalTime": {"hour": 16, "minutes": 43}
+        "time": {"hour": 17, "minutes": 52},
+        "universalTime": {"hour": 14, "minutes": 52}
       }
     ]
   },
@@ -5905,7 +5905,7 @@
         "universalTime": {"hour": 1, "minutes": 43}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 34},
         "universalTime": {"hour": 8, "minutes": 34}
@@ -6292,7 +6292,7 @@
         "universalTime": {"hour": 2, "minutes": 46}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 43},
         "universalTime": {"hour": 8, "minutes": 43}
@@ -6636,7 +6636,7 @@
         "universalTime": {"hour": 2, "minutes": 49}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 18},
         "universalTime": {"hour": 8, "minutes": 18}
@@ -6765,7 +6765,7 @@
         "universalTime": {"hour": 3, "minutes": 9}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 48},
         "universalTime": {"hour": 8, "minutes": 48}
@@ -7023,7 +7023,7 @@
         "universalTime": {"hour": 2, "minutes": 7}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 39},
         "universalTime": {"hour": 8, "minutes": 39}
@@ -7410,7 +7410,7 @@
         "universalTime": {"hour": 1, "minutes": 49}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 30},
         "universalTime": {"hour": 8, "minutes": 30}
@@ -8141,7 +8141,7 @@
         "universalTime": {"hour": 2, "minutes": 33}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 19},
         "universalTime": {"hour": 8, "minutes": 19}
@@ -8270,7 +8270,7 @@
         "universalTime": {"hour": 3, "minutes": 21}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 44},
         "universalTime": {"hour": 8, "minutes": 44}
@@ -8399,7 +8399,7 @@
         "universalTime": {"hour": 2, "minutes": 10}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 33},
         "universalTime": {"hour": 8, "minutes": 33}
@@ -8528,7 +8528,7 @@
         "universalTime": {"hour": 1, "minutes": 54}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 40},
         "universalTime": {"hour": 8, "minutes": 40}
@@ -9130,7 +9130,7 @@
         "universalTime": {"hour": 2, "minutes": 21}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 28},
         "universalTime": {"hour": 8, "minutes": 28}
@@ -9259,7 +9259,7 @@
         "universalTime": {"hour": 3, "minutes": 13}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 30},
         "universalTime": {"hour": 8, "minutes": 30}
@@ -9517,7 +9517,7 @@
         "universalTime": {"hour": 1, "minutes": 44}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 35},
         "universalTime": {"hour": 8, "minutes": 35}
@@ -9904,7 +9904,7 @@
         "universalTime": {"hour": 2, "minutes": 38}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 41},
         "universalTime": {"hour": 8, "minutes": 41}
@@ -10248,7 +10248,7 @@
         "universalTime": {"hour": 2, "minutes": 54}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 19},
         "universalTime": {"hour": 8, "minutes": 19}
@@ -10377,7 +10377,7 @@
         "universalTime": {"hour": 3, "minutes": 4}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 48},
         "universalTime": {"hour": 8, "minutes": 48}
@@ -10635,7 +10635,7 @@
         "universalTime": {"hour": 2, "minutes": 10}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 37},
         "universalTime": {"hour": 8, "minutes": 37}
@@ -11022,7 +11022,7 @@
         "universalTime": {"hour": 1, "minutes": 46}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 31},
         "universalTime": {"hour": 8, "minutes": 31}
@@ -11753,7 +11753,7 @@
         "universalTime": {"hour": 2, "minutes": 36}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 18},
         "universalTime": {"hour": 8, "minutes": 18}
@@ -11882,7 +11882,7 @@
         "universalTime": {"hour": 3, "minutes": 20}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 46},
         "universalTime": {"hour": 8, "minutes": 46}
@@ -12011,7 +12011,7 @@
         "universalTime": {"hour": 2, "minutes": 4}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 32},
         "universalTime": {"hour": 8, "minutes": 32}
@@ -12140,7 +12140,7 @@
         "universalTime": {"hour": 1, "minutes": 57}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 40},
         "universalTime": {"hour": 8, "minutes": 40}
@@ -12742,7 +12742,7 @@
         "universalTime": {"hour": 2, "minutes": 23}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 26},
         "universalTime": {"hour": 8, "minutes": 26}
@@ -12871,7 +12871,7 @@
         "universalTime": {"hour": 3, "minutes": 17}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 34},
         "universalTime": {"hour": 8, "minutes": 34}
@@ -13129,7 +13129,7 @@
         "universalTime": {"hour": 1, "minutes": 45}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 37},
         "universalTime": {"hour": 8, "minutes": 37}
@@ -13516,7 +13516,7 @@
         "universalTime": {"hour": 2, "minutes": 31}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 39},
         "universalTime": {"hour": 8, "minutes": 39}
@@ -13860,7 +13860,7 @@
         "universalTime": {"hour": 2, "minutes": 59}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 21},
         "universalTime": {"hour": 8, "minutes": 21}
@@ -13989,7 +13989,7 @@
         "universalTime": {"hour": 2, "minutes": 58}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 46},
         "universalTime": {"hour": 8, "minutes": 46}
@@ -14247,7 +14247,7 @@
         "universalTime": {"hour": 2, "minutes": 13}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 35},
         "universalTime": {"hour": 8, "minutes": 35}
@@ -14634,7 +14634,7 @@
         "universalTime": {"hour": 1, "minutes": 44}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 31},
         "universalTime": {"hour": 8, "minutes": 31}
@@ -15322,7 +15322,7 @@
         "universalTime": {"hour": 2, "minutes": 40}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 18},
         "universalTime": {"hour": 8, "minutes": 18}
@@ -15451,7 +15451,7 @@
         "universalTime": {"hour": 3, "minutes": 18}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 47},
         "universalTime": {"hour": 8, "minutes": 47}
@@ -15580,7 +15580,7 @@
         "universalTime": {"hour": 2, "minutes": 0}
       },
       {
-        "prayerTimeName": "Jummah",
+        "prayerTimeName": "Dhuhr",
         "isUpComming": false,
         "time": {"hour": 11, "minutes": 40},
         "universalTime": {"hour": 8, "minutes": 40}
